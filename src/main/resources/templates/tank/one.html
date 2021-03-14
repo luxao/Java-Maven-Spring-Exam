@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            background: lightcoral;
+        }
+
+        .mdc-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mdc-drawer__header {
+            padding: 15px;
+        }
+
+        .mdc-list-item {
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+        }
+
+        .mdc-list-item__text {
+            padding-left: 15px;
+        }
+
+        .mdc-drawer {
+            border-right-color: rgba(0, 0, 0, .12);
+            border-right-style: solid;
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+<aside class="mdc-drawer">
+    <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">Tanky</h3>
+    </div>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <a class="mdc-list-item" href="/tank/">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                <span class="mdc-list-item__text">Tanks</span>
+            </a>
+
+        </nav>
+    </div>
+</aside>
+<div style="display: flex; flex-direction: column; width: 100%; overflow: auto">
+    <h1 style="margin: 10px;" th:value="${tank.id}"></h1>
+    <ul class="demo-list-item mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>ID:&nbsp;</span>
+                <span th:text="${tank.id}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Name:&nbsp;</span>
+                <span th:text="${tank.name}"></span>
+            </span>
+        </li>
+
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Nationality:</span>
+                <span th:text="${tank.nationality}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Price:&nbsp;</span>
+                <span th:text="${tank.price}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>CrawlerChassis id:&nbsp;</span>
+                <span th:text="${tank.chassis.id}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>CrawlerChassis name:&nbsp;</span>
+                <span th:text="${tank.chassis.name}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>CrawlerChassis capacity:</span>
+                <span th:text="${tank.chassis.capacity}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>CrawlerChassis rotation speed:</span>
+                <span th:text="${tank.chassis.rotationSpeed}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>CrawlerChassis max speed:</span>
+                <span th:text="${tank.chassis.maxSpeed}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span> heavy cannon id:</span>
+                <span th:text="${tank.cannon.id}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span> heavy cannon id:</span>
+                <span th:text="${tank.cannon.name}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span> heavy cannon id:</span>
+                <span th:text="${tank.cannon.caliber}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Tower heavy cannon id:</span>
+                <span th:text="${tank.cannon.cadence}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span> heavy cannon id:</span>
+                <span th:text="${tank.cannon.spread}"></span>
+            </span>
+        </li>
+
+<!--        <li class="mdl-list__item">-->
+<!--            <span class="mdl-list__item-primary-content">-->
+<!--                <span>Tower heavy cannon id:</span>-->
+<!--                <span th:text="${tower.id}"></span>-->
+<!--            </span>-->
+<!--        </li>-->
+<!--        <li class="mdl-list__item">-->
+<!--            <span class="mdl-list__item-primary-content">-->
+<!--                <span> tower name:</span>-->
+<!--                <span th:text="${tower.name}"></span>-->
+<!--            </span>-->
+
+<!--        <li class="mdl-list__item">-->
+<!--            <span class="mdl-list__item-primary-content">-->
+<!--                <span> tower rotationSpeed:</span>-->
+<!--                <span th:text="${tower.rotationSpeed}"></span>-->
+<!--            </span>-->
+<!--        </li>-->
+<!--        <li class="mdl-list__item">-->
+<!--            <span class="mdl-list__item-primary-content">-->
+<!--                <span> tower oversight:</span>-->
+<!--                <span th:text="${tower.oversight}"></span>-->
+<!--            </span>-->
+<!--        </li>-->
+
+
+
+
+
+
+
+
+        <h2 style="margin: 15px;">Components</h2>
+
+    </ul>
+<!--    <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow&#45;&#45;2dp" style="margin: 10px">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th class="mdl-data-table__cell&#45;&#45;non-numeric">ID</th>-->
+<!--            <th class="mdl-data-table__cell&#45;&#45;non-numeric">Date-Time</th>-->
+<!--            <th class="mdl-data-table__cell&#45;&#45;non-numeric">Date-Start</th>-->
+<!--            <th class="mdl-data-table__cell&#45;&#45;non-numeric">Date-End</th>-->
+<!--            <th class="mdl-data-table__cell&#45;&#45;non-numeric">High Month Payment</th>-->
+
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="contract: ${contracts.values()}">-->
+<!--            <td class="mdl-data-table__cell&#45;&#45;non-numeric">-->
+<!--                <a th:href="@{'/user/uid/' + ${user.uid} + '/contract/' + ${contract.getIdContract()}}" th:text="${contract.getIdContract()}"></a>-->
+<!--            </td>-->
+<!--            <td th:text="${contract.dateTime}" class="mdl-data-table__cell&#45;&#45;non-numeric"></td>-->
+<!--            <td th:text="${contract.dateStart}" class="mdl-data-table__cell&#45;&#45;non-numeric"></td>-->
+<!--            <td th:text="${contract.dateEnd}" class="mdl-data-table__cell&#45;&#45;non-numeric"></td>-->
+<!--            <td th:text="${contract.monthPayment}" class="mdl-data-table__cell&#45;&#45;non-numeric"></td>-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+
+
+
+
+</div>
+</body>
+</html>
